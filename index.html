@@ -11,13 +11,18 @@
     <iframe src="https://site-works.gitlab.io/poc-crossite-child" frameborder="0"></iframe>
     <script>
         console.log(1)
-        window.document.addEventListener('spockeeAddProduct', (event) => {
+        var receiveMessage = function(event) {
+            console.log("Recieved event " + JSON.stringify(event));
+        }
+        window.addEventListener("message", receiveMessage, true);
 
-            const {detail} = event
+        // window.document.addEventListener('spockeeAddProduct', (event) => {
 
-            console.log('Spockee add to cart data', detail);
+        //     const {detail} = event
 
-        })
+        //     console.log('Spockee add to cart data', detail);
+
+        // })
     </script>
 </body>
 </html>

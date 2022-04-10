@@ -12,7 +12,7 @@
     <script>
         console.log(1)
         var receiveMessage = function(event) {
-            console.log("Recieved event " + JSON.stringify(event));
+            console.log("Recieved event " + JSON.stringify(event.data));
         }
         window.addEventListener("message", receiveMessage, true);
 

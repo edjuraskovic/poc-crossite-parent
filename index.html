@@ -8,13 +8,14 @@
 </head>
 <body>
     <h1>Parent</h1>
+    <iframe src="https://site-works.gitlab.io/poc-crossite-child" frameborder="0"></iframe>
     <script>
         console.log(1)
         let receiveMessage = function(event) {
             console.log("Event data " + JSON.stringify(event.data));
         }
         // window.addEventListener("message", receiveMessage, true);
-        window.addEventListener("message", function(e){
+        window.addEventListener("message", e => {
             if(e.origin == "https://site-works.gitlab.io/poc-crossite-child") {
                let msg = receiveMessage(e)
                console.log("MSG :: ", msg)
@@ -28,7 +29,5 @@
         //     console.log('Spockee add to cart data', detail);
         // })
     </script>
-    <iframe src="https://site-works.gitlab.io/poc-crossite-child" frameborder="0"></iframe>
-    
 </body>
 </html>

@@ -16,7 +16,6 @@
         }
         // window.addEventListener("message", receiveMessage, true);
         window.addEventListener("message", e => {
-            console.log("E:: ", e)
             if(e.origin == "https://site-works.gitlab.io/poc-crossite-child") {
                let msg = receiveMessage(e)
                console.log("MSG :: ", msg)
@@ -24,9 +23,11 @@
                 return
             }
         }, true);
+
         // window.document.addEventListener('spockeeAddProduct', (event) => {
         //     const {detail} = event
         //     console.log('Spockee add to cart data', detail);
         // })
     </script>
 </body>
+</html>

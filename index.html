@@ -13,13 +13,13 @@
         console.log(1)
         let receiveMessage = function(event) {
             console.log("Event data " + JSON.stringify(event.data));
+            // further logic
         }
         // window.addEventListener("message", receiveMessage, true);
         window.addEventListener("message", e => {
             console.log("E:: ", e)
             if(e.origin == "https://site-works.gitlab.io") {
-               let msg = receiveMessage(e)
-               console.log("MSG :: ", msg)
+               receiveMessage(e)
             } else {
                 return
             }

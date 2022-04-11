@@ -17,7 +17,8 @@
         // window.addEventListener("message", receiveMessage, true);
         window.addEventListener("message", function(e){
             if(e.origin == "https://site-works.gitlab.io/poc-crossite-child") {
-                receiveMessage(e)
+               let msg = receiveMessage(e)
+               console.log("MSG :: ", msg)
             } else {
                 return
             }

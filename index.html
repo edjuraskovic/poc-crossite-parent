@@ -11,22 +11,21 @@
     <iframe src="https://site-works.gitlab.io/poc-crossite-child" frameborder="0"></iframe>
     <script>
         console.log(1)
-        let receiveMessage = function(event) {
-            console.log("Event data " + JSON.stringify(event.data));
-            // further logic
-        }
-        // window.addEventListener("message", receiveMessage, true);
-        window.addEventListener("message", e => {
-            console.log("E:: ", e)
-            if(e.origin == "https://site-works.gitlab.io") {
-               receiveMessage(e)
-            } else {
-                return
-            }
-        }, true);
-        // window.document.addEventListener('spockeeAddProduct', (event) => {
-        //     const {detail} = event
-        //     console.log('Spockee add to cart data', detail);
-        // })
+        // let receiveMessage = function(event) {
+        //     console.log("Event data " + JSON.stringify(event.data));
+        //     // further logic
+        // }
+        // // window.addEventListener("message", receiveMessage, true);
+        // window.addEventListener("message", e => {
+        //     if(e.origin == "https://site-works.gitlab.io") {
+        //        receiveMessage(e)
+        //     } else {
+        //         return
+        //     }
+        // }, true);
+        window.document.addEventListener('spockeeAddProduct', (event) => {
+            const {detail} = event
+            console.log('Spockee add to cart data', detail);
+        })
     </script>
 </body>
